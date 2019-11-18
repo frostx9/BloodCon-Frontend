@@ -6,3 +6,50 @@ body {
 #sticky-footer {
   flex-shrink: 0;
 }
+
+.carousel-inner img {
+  width: auto;
+  height: 400px;
+  max-height: 500px;
+}
+
+.login {
+  padding: 6px 15px;
+  margin: 10px;
+  border-radius: 20px;
+  background: none;
+  background: linear-gradient(to bottom right,#F87E7B,#B05574);
+  /* border: 2px solid #FAB87F;
+  color: #FAB87F; */
+  /* font-weight: bold; */
+  transition: all .5s;
+  margin-top: 1em;
+}
+
+.logo {
+  padding: 6px 15px;
+  margin: 10px;
+  font-weight: bold;
+  transition: all .5s;
+  margin-top: 1em;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #f8f8f8 0%, #e6a292 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modal-content {
+  background: #B05574;
+  color: white;
+}
+
+#fdonor {
+  color: white;
+}
+
+#freq {
+  color: white;
+}
+
