@@ -19,7 +19,7 @@
 
 </head>
 
-<body class="bg-secondary">
+<body class="bg-secondary" style="visibility: hidden;">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark badge-secondary static-top">
@@ -34,23 +34,13 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav list ml-auto">
           <li class="nav-item active login">
             <a class="nav-link" href="/">Home
             </a>
           </li>
           <li class="nav-item login">
             <a class="nav-link" href="requests.html">Requests</a>
-          </li>
-          <li class="nav-item login">
-            <a class="nav-link" href="profile.html">Profile</a>
-            <span class="sr-only">(current)</span>
-          </li>
-          <li class="nav-item login">
-            <a class="nav-link" href="sign.html">Sign Up</a>
-          </li>
-          <li class="nav-item login">
-            <a class="nav-link" data-toggle="modal" data-target="#modalLoginForm" href="#">Sign In</a>
           </li>
         </ul>
       </div>
@@ -65,7 +55,7 @@
       <h2 class="text-left border border-dark container font-weight-bold pt-4 pb-4" style="border-width: 3px !important;">Personal Details</h2>
       <div class="container rounded border border-bottom border-dark p-3 mb-2" style="border-width: 2px !important;" id="fdonor">
         <!-- Form For Donor -->
-        <form>
+        <form id='mainForm'>
         <div class="form-row">
           <div class="form-group col-md-12 text-left">
             <label for="name">Name</label>
@@ -73,15 +63,15 @@
           </div>
         </div>
           <div class="form-row">
-              <div class="form-group col-md-4 text-left">
+              <div class=" change form-group col-md-4 text-left">
                 <label for="age">Age</label>
                 <input type="number" min="18" max="65" class="form-control" id="age">
               </div>
-              <div class="form-group col-md-4 text-left">
+              <div class=" change form-group col-md-4 text-left">
                 <label for="weight">Weight</label>
                 <input type="number" min="55" class="form-control" id="weight">
               </div>
-              <div class="form-group col-md-4 text-left">
+              <div class=" change form-group col-md-4 text-left">
                 <label for="blood-group">Blood Group</label>
                 <input type="text" class="form-control" id="blood">
               </div>
@@ -123,13 +113,14 @@
           <button type="submit" class="btn btn-primary">Update</button>
         </form>
       </div>
+      <div id='reqpost'>
       <h2 class="text-left border border-dark container font-weight-bold pt-4 pb-4" style="border-width: 3px !important;">Request for blood</h2>
       <!-- Form for submission -->
       <div class="container rounded border border-bottom border-dark p-3 mb-2" style="border-width: 2px !important;" id="fdonor">
-        <form>
+        <form id="postform">
           <div class="form-group text-left purple-border">
             <label for="desc">Description</label>
-            <textarea class="form-control" id="desc" rows="5" ></textarea>
+            <textarea class="form-control" id="pdesc" rows="5" ></textarea>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6 text-left">
@@ -143,9 +134,9 @@
           </div>
           <div class="form-group text-left">
               <label for="address">Address</label>
-              <input type="text" class="form-control" id="address">
+              <input type="text" class="form-control" id="paddress">
             </div>
-          <div class="form-row">
+          <div class="form-row text-left">
             <div class="form-group col-md-6">
               <label for="area">Area</label>
               <input type="text" class="form-control" id="parea">
@@ -177,40 +168,64 @@
           </div>
           <button type="submit" class="btn border btn-secondary">Submit</button>
         </form>
+        <p class="pt-3 post"></p>
       </div>
-
-
-
-  <!-- Form -->
-  <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header text-center">
-          <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body mx-3">
-          <div class="md-form mb-5">
-            <i class="fas fa-envelope prefix grey-text"></i>
-            <input type="email" id="defaultForm-email" class="form-control validate">
-            <label class="pt-2" data-error="wrong" data-success="right" for="defaultForm-email">Enter Your Email</label>
-          </div>
-
-          <div class="md-form mb-4">
-            <i class="fas fa-lock prefix grey-text"></i>
-            <input type="password" id="defaultForm-pass" class="form-control validate">
-            <label class="pt-2" data-error="wrong" data-success="right" for="defaultForm-pass"> Enter Your Password</label>
-          </div>
-          <div class="modal-footer d-flex justify-content-center">
-            <button class="btn btn-dark">Login</button>
-          </div>
-        </div>
       </div>
     </div>
   </div>
-  <!-- Form Finished  -->
+
+
+
+    <!-- Form -->
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <form action="" id="formL">
+            <div class="modal-header text-center">
+              <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body mx-3">
+              <div class="md-form mb-5">
+                <i class="fas fa-envelope prefix grey-text"></i>
+                <input type="email" id="femail" class="form-control validate">
+                <label class="pt-2" data-error="wrong" data-success="right" for="defaultForm-email">Enter Your Email</label>
+              </div>
+              <div class="md-form mb-4">
+                <i class="fas fa-lock prefix grey-text"></i>
+                <input type="password" id="fpass" class="form-control validate">
+                <label class="pt-2" data-error="wrong" data-success="right" for="defaultForm-pass"> Enter Your Password</label>
+              </div>
+              <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                  <div class="col-sm-10" id="ftype">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="donor" checked>
+                      <label class="form-check-label" for="gridRadios1">
+                        Donor
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="receiver">
+                      <label class="form-check-label" for="gridRadios2">
+                        Receiver
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="modal-footer pt-4 d-flex justify-content-center">
+                <input type="submit" class="btn btn-dark" id="loginfloat"></input>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+      <!-- Form Finished  -->
   
   <!-- Footer -->
   <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
@@ -223,9 +238,10 @@
 
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.slim.min.js"></script>
+  <script src="vendor/jquery/jquery.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="js/index.js"></script>
+  <script src="js/profile.js"></script>
 
 </body>
 

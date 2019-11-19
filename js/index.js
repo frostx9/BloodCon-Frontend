@@ -15,181 +15,115 @@ $('#receiver').click(function () {
 console.log("aaaaaa");
 
 
-let data = [
-  {
-    _id: "5d8f4efd4c5e2b3a145844ca",
-    desc: "Need urgent B- blood for a cancer patient",
-    bloodGroup: "B-",
-    hospital: "R.G.Kar Hospital",
-    area: "Shyambazar",
-    address: "25, Chowdhury Nibash, Nimta",
-    city: "kolkata",
-    state: "East Bengal",
-    zipCode: 700049,
-    country: "India",
-    phone: "8961043633",
-    owner: "5d8f4ee84c5e2b3a145844c7",
-    createdAt: "2019-09-28T12:15:57.866Z",
-    updatedAt: "2019-09-28T12:15:57.866Z",
-    __v: 0
-  },
-  {
-    _id: "5d8f4f344c5e2b3a145844cb",
-    desc: "Need A+ blood for a 10 year old child",
-    bloodGroup: "A+",
-    hospital: "Sagar Dutta Hospital",
-    area: "kamarhati",
-    address: "25, Chowdhury Nibash, Nimta",
-    city: "kolkata",
-    state: "East Bengal",
-    zipCode: 700049,
-    country: "India",
-    phone: "8961043633",
-    owner: "5d8f4ee84c5e2b3a145844c7",
-    createdAt: "2019-09-28T12:16:52.862Z",
-    updatedAt: "2019-09-28T12:16:52.862Z",
-    __v: 0
-  },
-  {
-    _id: "5d8f4f504c5e2b3a145844cd",
-    desc: "Pregnant lady needs 2 bag of O- blood within 24 hours.",
-    bloodGroup: "O-",
-    hospital: "Narayana Hospital",
-    area: "Maddhyamgram",
-    address: "25, Chowdhury Nibash, Nimta",
-    city: "kolkata",
-    state: "East Bengal",
-    zipCode: 700049,
-    country: "US",
-    phone: "8961043633",
-    owner: "5d8f24859f58c207c81a0623",
-    createdAt: "2019-09-28T12:17:20.821Z",
-    updatedAt: "2019-09-28T12:17:20.821Z",
-    __v: 0
-  },
-  {
-    _id: "5d8f4f5a4c5e2b3a145844ce",
-    desc: "Need AB+ for a patient suffering from 3rd degree burn.",
-    bloodGroup: "AB+",
-    area: "Shyambazar",
-    hospital: "R.G.Kar",
-    address: "25, Chowdhury Nibash, Nimta",
-    city: "delhi",
-    state: "East Bengal",
-    zipCode: 700049,
-    country: "US",
-    phone: "8961043633",
-    owner: "5d8f24859f58c207c81a0623",
-    createdAt: "2019-09-28T12:17:30.252Z",
-    updatedAt: "2019-09-28T12:17:30.252Z",
-    __v: 0
-  },
-  {
-    _id: "5d8f4f624c5e2b3a145844cf",
-    desc: "Need AB- blood for a person wounded in accident.",
-    bloodGroup: "AB-",
-    hospital: "R.G.Kar",
-    address: "25, Chowdhury Nibash, Nimta",
-    city: "delhi",
-    state: "East Bengal",
-    zipCode: 700049,
-    country: "India",
-    phone: "8961043633",
-    owner: "5d8f24859f58c207c81a0623",
-    createdAt: "2019-09-28T12:17:38.041Z",
-    updatedAt: "2019-09-28T12:17:38.041Z",
-    __v: 0
-  },{
-    _id: "5d8f4efd4c5e2b3a145844ca",
-    desc: "Need urgent B- blood for a cancer patient",
-    bloodGroup: "B-",
-    hospital: "R.G.Kar Hospital",
-    area: "Shyambazar",
-    address: "25, Chowdhury Nibash, Nimta",
-    city: "kolkata",
-    state: "East Bengal",
-    zipCode: 700049,
-    country: "India",
-    phone: "8961043633",
-    owner: "5d8f4ee84c5e2b3a145844c7",
-    createdAt: "2019-09-28T12:15:57.866Z",
-    updatedAt: "2019-09-28T12:15:57.866Z",
-    __v: 0
-  },
-  {
-    _id: "5d8f4f344c5e2b3a145844cb",
-    desc: "Need A+ blood for a 10 year old child",
-    bloodGroup: "A+",
-    hospital: "Sagar Dutta Hospital",
-    area: "kamarhati",
-    address: "25, Chowdhury Nibash, Nimta",
-    city: "kolkata",
-    state: "East Bengal",
-    zipCode: 700049,
-    country: "India",
-    phone: "8961043633",
-    owner: "5d8f4ee84c5e2b3a145844c7",
-    createdAt: "2019-09-28T12:16:52.862Z",
-    updatedAt: "2019-09-28T12:16:52.862Z",
-    __v: 0
-  },
-  {
-    _id: "5d8f4f504c5e2b3a145844cd",
-    desc: "Pregnant lady needs 2 bag of O- blood within 24 hours.",
-    bloodGroup: "O-",
-    hospital: "Narayana Hospital",
-    area: "Maddhyamgram",
-    address: "25, Chowdhury Nibash, Nimta",
-    city: "kolkata",
-    state: "East Bengal",
-    zipCode: 700049,
-    country: "US",
-    phone: "8961043633",
-    owner: "5d8f24859f58c207c81a0623",
-    createdAt: "2019-09-28T12:17:20.821Z",
-    updatedAt: "2019-09-28T12:17:20.821Z",
-    __v: 0
-  },
-  {
-    _id: "5d8f4f5a4c5e2b3a145844ce",
-    desc: "Need AB+ for a patient suffering from 3rd degree burn.",
-    bloodGroup: "AB+",
-    area: "Shyambazar",
-    hospital: "R.G.Kar",
-    address: "25, Chowdhury Nibash, Nimta",
-    city: "delhi",
-    state: "East Bengal",
-    zipCode: 700049,
-    country: "US",
-    phone: "8961043633",
-    owner: "5d8f24859f58c207c81a0623",
-    createdAt: "2019-09-28T12:17:30.252Z",
-    updatedAt: "2019-09-28T12:17:30.252Z",
-    __v: 0
-  },
-  {
-    _id: "5d8f4f624c5e2b3a145844cf",
-    desc: "Need AB- blood for a person wounded in accident.",
-    bloodGroup: "AB-",
-    hospital: "R.G.Kar",
-    address: "25, Chowdhury Nibash, Nimta",
-    city: "delhi",
-    state: "East Bengal",
-    zipCode: 700049,
-    country: "India",
-    phone: "8961043633",
-    owner: "5d8f24859f58c207c81a0623",
-    createdAt: "2019-09-28T12:17:38.041Z",
-    updatedAt: "2019-09-28T12:17:38.041Z",
-    __v: 0
+//Login Form
+
+$('#formL').submit(function (e) {
+  e.preventDefault()
+  let email = $('#femail').val()
+  let pass = $('#fpass').val()
+  let type = $("input[name='gridRadios']:checked").val()
+  console.log('submit');
+  console.log(email, pass, type);
+
+  if(type === 'donor'){
+    url = 'http://localhost:3050/donors/login'
+    get = 'donor'
+  } else if(type === 'receiver') {
+    get = 'receiver'
+    url = 'http://localhost:3050/receivers/login'
   }
-]
+  let data = {
+    email: email,
+    password: pass
+  }
+  $.ajax({
+    url: url,
+    processData: false,
+    contentType: 'application/json',
+    data: JSON.stringify(data),
+    type: "POST",
+    success: function (response) {
+      console.log(response[get]._id);
+      localStorage.setItem('id', response[get]._id)
+      localStorage.setItem('token', response.token)
+      localStorage.setItem('type', get)
+      window.location.href = 'profile.html';
+    },
+    error : function (error) {
+      console.log(error);
+      alert('Wrong ID and password')
+    }
+  })
+})
 
 
-data.forEach(element => {
-  $('#content').append(`<div class="card text-white container pt-4 bg-info mb-3" style="max-width: 18rem;"><div class="card-header text-left">Contact - ${element.phone} </div><div class="card-body"><h5 class="card-title">${element.bloodGroup} blood needed</h5><p class="card-text">${element.desc}</p><hr><p>Location - ${element.hospital}</p></div></div>`)
-});
 
-// $('#content').html('<div class="card text-white bg-info mb-3" style="max-width: 18rem;"><div class="card-header text-left">Contact - 8961043633</div><div class="card-body"><h5 class="card-title">B- blood needed</h5><p class="card-text">lorem lorem lorem lorem lorem lorem</p><hr><p>Location - R.G.Kar Hospital</p></div></div>')
+// Navbar control
 
-console.log(typeof(data));
+if (localStorage.getItem("id") === null) {
+  console.log('no id');
+  $('.list').append(`          <li class="nav-item login">
+  <a class="nav-link" href="sign.html">Sign Up</a>
+</li>
+<li class="nav-item login">
+  <a class="nav-link" data-toggle="modal" data-target="#modalLoginForm" href="#">Sign In</a>
+</li>`)
+} else {
+  console.log('got id');
+  $('.list').append(`
+<li class="nav-item login">
+  <a class="nav-link" href="profile.html">Profile</a>
+</li>
+<li class="nav-item logout2 login">
+  <a class="nav-link" href="#">Log out</a>
+</li>`)
+}
+
+
+// logging out
+$('.logout2').click(function() {
+  let lurl
+  if(localStorage.getItem('type') === 'donor') {
+    lurl = 'http://localhost:3050/donors/logout'
+    type = 'donor'
+  }
+  if(localStorage.getItem('type') === 'receiver') {
+    lurl = 'http://localhost:3050/receivers/logout'
+    type = 'receiver'
+  }
+  $.ajax({
+    url: lurl,
+    type: 'POST',
+    beforeSend: function(request) {
+      request.setRequestHeader("Authorization", `Bearer ${localStorage.getItem('token')}`)
+    },
+    success: function (response) {
+      window.location.href = 'index.html'
+      localStorage.clear()
+
+    },
+    error : function (error) {
+      window.location.href = 'index.html'
+      localStorage.clear()
+    }
+  })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
