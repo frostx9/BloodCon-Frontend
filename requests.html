@@ -76,13 +76,13 @@
           <div class="modal-body mx-3">
             <div class="md-form mb-5">
               <i class="fas fa-envelope prefix grey-text"></i>
-              <input type="email" id="femail" class="form-control validate">
               <label class="pt-2" data-error="wrong" data-success="right" for="defaultForm-email">Enter Your Email</label>
+              <input type="email" name="email" id="femail" class="form-control validate">
             </div>
             <div class="md-form mb-4">
+                <label class="pt-2" data-error="wrong" data-success="right" for="defaultForm-pass"> Enter Your Password</label>
               <i class="fas fa-lock prefix grey-text"></i>
-              <input type="password" id="fpass" class="form-control validate">
-              <label class="pt-2" data-error="wrong" data-success="right" for="defaultForm-pass"> Enter Your Password</label>
+              <input type="password" name="password" id="fpass" class="form-control validate">
             </div>
             <fieldset class="form-group">
               <div class="row">
@@ -104,7 +104,7 @@
               </div>
             </fieldset>
             <div class="modal-footer pt-4 d-flex justify-content-center">
-              <input type="submit" class="btn btn-dark" id="loginfloat"></input>
+              <input type="submit" value="Log in" class="btn btn-dark" id="loginfloat">
             </div>
           </div>
         </form>
@@ -124,6 +124,7 @@
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="js/index.js"></script>
   <script src="js/requests.js"></script>

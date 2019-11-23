@@ -17,44 +17,101 @@ console.log("aaaaaa");
 
 //Login Form
 
-$('#formL').submit(function (e) {
-  e.preventDefault()
-  let email = $('#femail').val()
-  let pass = $('#fpass').val()
-  let type = $("input[name='gridRadios']:checked").val()
-  console.log('submit');
-  console.log(email, pass, type);
-
-  if(type === 'donor'){
-    url = 'http://localhost:3050/donors/login'
-    get = 'donor'
-  } else if(type === 'receiver') {
-    get = 'receiver'
-    url = 'http://localhost:3050/receivers/login'
-  }
-  let data = {
-    email: email,
-    password: pass
-  }
-  $.ajax({
-    url: url,
-    processData: false,
-    contentType: 'application/json',
-    data: JSON.stringify(data),
-    type: "POST",
-    success: function (response) {
-      console.log(response[get]._id);
-      localStorage.setItem('id', response[get]._id)
-      localStorage.setItem('token', response.token)
-      localStorage.setItem('type', get)
-      window.location.href = 'profile.html';
+$("#formL").validate({
+  rules: {
+    email: {
+      required: true,
+      email: true
     },
-    error : function (error) {
-      console.log(error);
-      alert('Wrong ID and password')
+    password: {
+      required: true,
+      minlength: 8
+    },
+  },
+  messages: {
+    email: "Please enter a valid email address",
+    password: {
+      required: "Please provide a password",
+      minlength: "Your password must be at least 8 characters long"
     }
-  })
+  },
+  submitHandler: function (form) { 
+    let email = $('#femail').val()
+    let pass = $('#fpass').val()
+    let type = $("input[name='gridRadios']:checked").val()
+    console.log('submit');
+    console.log(email, pass, type);
+  
+    if(type === 'donor'){
+      url = 'http://localhost:3050/donors/login'
+      get = 'donor'
+    } else if(type === 'receiver') {
+      get = 'receiver'
+      url = 'http://localhost:3050/receivers/login'
+    }
+    let data = {
+      email: email,
+      password: pass
+    }
+    $.ajax({
+      url: url,
+      processData: false,
+      contentType: 'application/json',
+      data: JSON.stringify(data),
+      type: "POST",
+      success: function (response) {
+        console.log(response[get]._id);
+        localStorage.setItem('id', response[get]._id)
+        localStorage.setItem('token', response.token)
+        localStorage.setItem('type', get)
+        window.location.href = 'profile.html';
+      },
+      error : function (error) {
+        console.log(error);
+        alert('Wrong ID and password')
+      }
+    })
+  }
 })
+
+// $('#formL').submit(function (e) {
+//   e.preventDefault()
+//   let email = $('#femail').val()
+//   let pass = $('#fpass').val()
+//   let type = $("input[name='gridRadios']:checked").val()
+//   console.log('submit');
+//   console.log(email, pass, type);
+
+//   if(type === 'donor'){
+//     url = 'http://localhost:3050/donors/login'
+//     get = 'donor'
+//   } else if(type === 'receiver') {
+//     get = 'receiver'
+//     url = 'http://localhost:3050/receivers/login'
+//   }
+//   let data = {
+//     email: email,
+//     password: pass
+//   }
+//   $.ajax({
+//     url: url,
+//     processData: false,
+//     contentType: 'application/json',
+//     data: JSON.stringify(data),
+//     type: "POST",
+//     success: function (response) {
+//       console.log(response[get]._id);
+//       localStorage.setItem('id', response[get]._id)
+//       localStorage.setItem('token', response.token)
+//       localStorage.setItem('type', get)
+//       window.location.href = 'profile.html';
+//     },
+//     error : function (error) {
+//       console.log(error);
+//       alert('Wrong ID and password')
+//     }
+//   })
+// })
 
 
 

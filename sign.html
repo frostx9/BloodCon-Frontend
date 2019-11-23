@@ -65,31 +65,31 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="dname" placeholder="Enter Name">
+                <input type="text" class="form-control" name="name" id="dname" placeholder="Enter Name">
               </div>
               <div class="form-group col-md-6">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="demail" placeholder="Enter Email">
+                <input type="email" class="form-control" name="email" id="demail" placeholder="Enter Email">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="dpassword" placeholder="Enter Password">
+                <input type="password" class="form-control" name="password" id="dpassword" placeholder="Enter Password">
                 </div>
               <div class="form-group col-md-6">
                 <label for="c-password">Confirm Password</label>
-                <input type="password" class="form-control" id="dcpassword" placeholder="Confirm Password">
+                <input type="password" class="form-control" name="cpassword" id="dcpassword" placeholder="Confirm Password">
               </div>
             </div>
               <div class="form-row">
                   <div class="form-group col-md-4">
                     <label for="age">Age</label>
-                    <input type="number" min="18" max="65" class="form-control" id="dage" placeholder="Enter your age">
+                    <input type="number" min="18" max="65" name="age" class="form-control" id="dage" placeholder="Enter your age">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="weight">Weight</label>
-                    <input type="number" min="55" class="form-control" id="dweight" placeholder="Enter your weight">
+                    <input type="number" min="55" class="form-control" name="weight" id="dweight" placeholder="Enter your weight">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="blood-group">Blood Group</label>
@@ -123,7 +123,7 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="phone">Phone Number</label>
-                  <input type="number" min="0" class="form-control" id="dnumber" placeholder="Enter your phone number">
+                  <input type="number" min="0" class="form-control" name="phone" id="dnumber" placeholder="Enter your phone number">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="zip-code">Zip Code</label>
@@ -140,21 +140,21 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="name">Name</label>
-                  <input type="text" class="form-control" id="rname" placeholder="Enter Name">
+                  <input type="text" class="form-control" name="name" id="rname" placeholder="Enter Name">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" id="remail" placeholder="Enter Email">
+                  <input type="email" class="form-control" name="email" id="remail" placeholder="Enter Email">
                 </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="rpassword" placeholder="Enter Password">
+                    <input type="password" class="form-control" name="password" id="rpassword" placeholder="Enter Password">
                     </div>
                   <div class="form-group col-md-6">
                     <label for="c-password">Confirm Password</label>
-                    <input type="password" class="form-control" id="rcpassword" placeholder="Confirm Password">
+                    <input type="password" class="form-control" name="cpassword" id="rcpassword" placeholder="Confirm Password">
                   </div>
                 </div>
                 <div class="form-group">
@@ -184,7 +184,7 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="phone">Phone Number</label>
-                    <input type="number" min="0" class="form-control" id="rnumber" placeholder="Enter your phone number">
+                    <input type="number" min="0" class="form-control" name="phone" id="rnumber" placeholder="Enter your phone number">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="zip-code">Zip Code</label>
@@ -213,13 +213,13 @@
           <div class="modal-body mx-3">
             <div class="md-form mb-5">
               <i class="fas fa-envelope prefix grey-text"></i>
-              <input type="email" id="femail" class="form-control validate">
               <label class="pt-2" data-error="wrong" data-success="right" for="defaultForm-email">Enter Your Email</label>
+              <input type="email" name="email" id="femail" class="form-control validate">
             </div>
             <div class="md-form mb-4">
+                <label class="pt-2" data-error="wrong" data-success="right" for="defaultForm-pass"> Enter Your Password</label>
               <i class="fas fa-lock prefix grey-text"></i>
-              <input type="password" id="fpass" class="form-control validate">
-              <label class="pt-2" data-error="wrong" data-success="right" for="defaultForm-pass"> Enter Your Password</label>
+              <input type="password" name="password" id="fpass" class="form-control validate">
             </div>
             <fieldset class="form-group">
               <div class="row">
@@ -241,7 +241,7 @@
               </div>
             </fieldset>
             <div class="modal-footer pt-4 d-flex justify-content-center">
-              <input type="submit" class="btn btn-dark" id="loginfloat"></input>
+              <input type="submit" value="Log in" class="btn btn-dark" id="loginfloat">
             </div>
           </div>
         </form>
@@ -262,6 +262,7 @@
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="js/index.js"></script>
   <script src="js/sign.js"></script>
